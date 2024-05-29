@@ -269,7 +269,8 @@ class GradSampler:
                     if model_outputs.__class__ == tuple:
                         model_outputs = model_outputs[0]
                     loss = self._loss_fn(model_outputs, loss_target)
-                    loss.backward()
+                    # loss.backward()
+                    loss.mean().backward()
 
                     # yield so gradients can be collected
                     computed_grads += 1
