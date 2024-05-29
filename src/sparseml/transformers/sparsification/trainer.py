@@ -658,6 +658,18 @@ class RecipeManagerTrainerInterface:
         # override defaults if kwargs are given, for example via recipe
         if kwargs:
             template.update(kwargs)
+            
+        #CHANGE START
+        if 'gradient_state' in template:
+            del template['gradient_state']
+        if 'iteration' in template:
+            del template['iteration']
+        if 'end_of_dataloader' in template:
+            del template['end_of_dataloader']
+        if 'remainder' in template:
+            del template['remainder']
+        #CHANGE END
+        
         data_loader = type(default_loader)(**template)
 
         while True:  # infinite dataloading
