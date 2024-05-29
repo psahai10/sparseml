@@ -64,7 +64,8 @@ _deps = [
     "evaluate>=0.4.1",
     "accelerate>=0.20.3",
     "safetensors>=0.4.1",
-    "compressed-tensors" 
+    "compressed-tensors",
+    "gputils"
 ]
 _nm_deps = [f"{'sparsezoo' if is_release else 'sparsezoo-nightly'}~={version_nm_deps}"]
 _deepsparse_deps = [
